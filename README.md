@@ -1,7 +1,6 @@
-# study
-学习
+# 学习笔记
 
-## HashMap
+## 1.HashMap
 ##### int DEFAULT_INITIAL_CAPACITY = 16：默认的初始容量为16 
 ##### int MAXIMUM_CAPACITY = 1 << 30：最大的容量为 2 ^ 30 
 ##### float DEFAULT_LOAD_FACTOR = 0.75f：默认的加载因子为 0.75f 
