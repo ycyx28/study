@@ -1,4 +1,4 @@
-## 1.HashMap
+## HashMap
 int DEFAULT_INITIAL_CAPACITY = 16：默认的初始容量为16 
 
 int MAXIMUM_CAPACITY = 1 << 30：最大的容量为 2 ^ 30 
