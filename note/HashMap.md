@@ -58,7 +58,9 @@ static int indexFor(int h, int length) {
 如：int a = 20&8
 
 20->10100
+
 8 ->01000
+
 a = 00000
 
 ### addEntry方法介绍
