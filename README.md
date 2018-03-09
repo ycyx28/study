@@ -1,6 +1,10 @@
 # 学习笔记
 日常学习笔记.
 
+# 博客
+
+- [Super.Yu](http://ycyx28.com/)
+
 # 传送门
 
 - [开源在线 Markdown 编辑器](https://pandao.github.io/editor.md/)
