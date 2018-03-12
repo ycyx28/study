@@ -1,27 +1,27 @@
 ## HashMap
 
 ### HashMap的成员变量
-int DEFAULT_INITIAL_CAPACITY = 16：默认的初始容量为16 
+- int DEFAULT_INITIAL_CAPACITY = 16：默认的初始容量为16 
 
-int MAXIMUM_CAPACITY = 1 << 30：最大的容量为 2 ^ 30 
+- int MAXIMUM_CAPACITY = 1 << 30：最大的容量为 2 ^ 30 
 
-float DEFAULT_LOAD_FACTOR = 0.75f：默认的加载因子为 0.75f 
+- float DEFAULT_LOAD_FACTOR = 0.75f：默认的加载因子为 0.75f 
 
-Entry< K,V>[] table：Entry类型的数组，HashMap用这个来维护内部的数据结构，它的长度由容量决定 
+- Entry< K,V>[] table：Entry类型的数组，HashMap用这个来维护内部的数据结构，它的长度由容量决定 
 
-int size：HashMap的大小 
+- int size：HashMap的大小 
 
-int threshold：HashMap的极限容量，扩容临界点（容量和加载因子的乘积）
+- int threshold：HashMap的极限容量，扩容临界点（容量和加载因子的乘积）
 
 ### HashMap的构造函数
 
-public HashMap()：构造一个具有默认初始容量 (16) 和默认加载因子 (0.75) 的空 HashMap 
+- public HashMap()：构造一个具有默认初始容量 (16) 和默认加载因子 (0.75) 的空 HashMap 
 
-public HashMap(int initialCapacity)：构造一个带指定初始容量和默认加载因子 (0.75) 的空 HashMap 
+- public HashMap(int initialCapacity)：构造一个带指定初始容量和默认加载因子 (0.75) 的空 HashMap 
 
-public HashMap(int initialCapacity, float loadFactor)：构造一个带指定初始容量和加载因子的空 HashMap 
+- public HashMap(int initialCapacity, float loadFactor)：构造一个带指定初始容量和加载因子的空 HashMap 
 
-public HashMap(Map< ? extends K, ? extends V> m)：构造一个映射关系与指定 Map 相同的新 HashMap
+- public HashMap(Map< ? extends K, ? extends V> m)：构造一个映射关系与指定 Map 相同的新 HashMap
 
 ### HashMap的结构
 
