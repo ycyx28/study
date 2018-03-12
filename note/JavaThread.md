@@ -49,7 +49,7 @@
 - 死亡状态:
 
 一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。
-  
---- 
-  
-  未完，待续
+
+## 4. Demo
+[Demo入口](https://github.com/ycyx28/study/blob/master/src/main/java/com/ycyx28/study/thread/execute/ProductExecute.java)
+
