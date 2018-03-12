@@ -18,7 +18,7 @@
   - 同一级的动作执行时遵循最上最右执行的原则
 > ### 表访问的几种方式
   - TABLE ACCESS FULL(全表扫描)
-  - TABLE ACCESS BY ROWID（通过ROWID的表存取）：ROWID是Oracle自动加在表最后的一列伪劣，表中不会物理存储ROWID。
+  - TABLE ACCESS BY ROWID（通过ROWID的表存取）：ROWID是Oracle自动加在表最后的一列伪列，表中不会物理存储ROWID。
   - TABLE ACCESS BY INDEX SCAN（索引扫描）
     - INDEX UNIQUE SCAN(索引唯一扫描)：每次返回至多返回一条记录
     - INDEX RANGE SCAN(索引范围扫描)：使用一个索引取多行数据
@@ -31,7 +31,7 @@
   - CBO(Cost-Based optimization) 基于代价的优化器
   
 ## 几个概念
-### 伪劣-ROWID
+### 伪列-ROWID
 
 ### Recursive SQL
 
