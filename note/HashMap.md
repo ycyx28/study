@@ -24,7 +24,9 @@ public HashMap(int initialCapacity, float loadFactor)：构造一个带指定初
 public HashMap(Map< ? extends K, ? extends V> m)：构造一个映射关系与指定 Map 相同的新 HashMap
 
 ### HashMap的结构
+
 HashMap是一个“链表散列”,HashMap底层实现是数组，只是数组的每一项都是一条链。其中参数initialCapacity就代表了该数组的长度
+
 ``` java
 static class Entry<K,V> implements Map.Entry<K,V> {
         final K key;
@@ -44,6 +46,7 @@ static class Entry<K,V> implements Map.Entry<K,V> {
 ```
 
 ### 计算该hash值在table中的下标
+
 对于HashMap的table而言，数据分布需要均匀（最好每项都只有一个元素，这样就可以直接找到），不能太紧也不能太松，太紧会导致查询速度慢，太松则浪费空间。计算hash值后，怎么才能保证table元素分布均与呢？我们会想到取模，但是由于取模的消耗较大，而HashMap是通过&运算符（按位与操作）来实现的：h & (length-1)
 
 ``` java
@@ -64,6 +67,7 @@ static int indexFor(int h, int length) {
 a = 00000
 
 ### addEntry方法介绍
+
 ``` java
 void addEntry(int hash, K key, V value, int bucketIndex) {
         //如果size大于极限容量，将要进行重建内部数据结构操作，之后的容量是原来的两倍，并且重新设置hash值和hash值在table中的索引值
@@ -84,4 +88,5 @@ void addEntry(int hash, K key, V value, int bucketIndex) {
         size++;
     }
 ```
+
 首先取得bucketIndex位置的Entry头结点，并创建新节点，把该新节点插入到链表中的头部，该新节点的next指针指向原来的头结点 
