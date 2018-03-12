@@ -79,7 +79,7 @@ executor.execute(runnable);   //创建固定容量大小的缓冲池
 
 Executors关系图：
 
-![Executors继承实现关系](image/Thread-pool.png)
+![Executors继承实现关系](image/Thread-pool.jpeg)
 
 ``` java
 Executors.newCachedThreadPool();        //创建一个缓冲池，缓冲池容量大小为Integer.MAX_VALUE
