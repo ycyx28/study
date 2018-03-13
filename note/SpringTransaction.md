@@ -40,3 +40,13 @@
 |PROPAGATION_NOT_SUPPORTED | 4 |以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。|
 |PROPAGATION_NEVER | 5 |以非事务方式执行，如果当前存在事务，则抛出异常。 |
 |PROPAGATION_NESTED| 6 |如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。|
+
+## Spring事务的隔离级别
+|名称| 值 |解释|
+|-| :-: |-|
+|ISOLATION_DEFAULT | -1 |这是一个PlatfromTransactionManager默认的隔离级别，使用数据库默认的事务隔离级别。另外四个与JDBC的隔离级别相对应|
+|ISOLATION_READ_UNCOMMITTED | 1 | 这是事务最低的隔离级别，它充许另外一个事务可以看到这个事务未提交的数据。这种隔离级别会产生脏读，不可重复读和幻读。 |
+|ISOLATION_READ_COMMITTED | 2 |保证一个事务修改的数据提交后才能被另外一个事务读取。另外一个事务不能读取该事务未提交的数据。 |
+|ISOLATION_REPEATABLE_READ | 4 |这种事务隔离级别可以防止脏读，不可重复读。但是可能出现幻读。 |
+|ISOLATION_SERIALIZABLE | 8 |这是花费最高代价但是最可靠的事务隔离级别。事务被处理为顺序执行。除了防止脏读，不可重复读外，还避免了幻读。|
+
