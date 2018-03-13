@@ -30,3 +30,13 @@
 
 ## Spring事务管理
 有了Spring，我们再也无需要去处理获得连接、关闭连接、事务提交和回滚等这些操作，使得我们把更多的精力放在处理业务上。事实上Spring并不直接管理事务，而是提供了多种事务管理器。他们将事务管理的职责委托给Hibernate或者JTA等持久化机制所提供的相关平台框架的事务来实现。
+
+|名称| 值 |解释|
+|-| :-: |-|
+|PROPAGATION_REQUIRED | 0 |支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择，也是Spring默认的事务的传播。|
+|PROPAGATION_SUPPORTS | 1 | 支持当前事务，如果当前没有事务，就以非事务方式执行。 |
+|PROPAGATION_MANDATORY | 2 |支持当前事务，如果当前没有事务，就抛出异常。 |
+|PROPAGATION_REQUIRES_NEW | 3 |新建事务，如果当前存在事务，把当前事务挂起。 |
+|PROPAGATION_NOT_SUPPORTED | 4 |以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。|
+|PROPAGATION_NEVER | 5 |以非事务方式执行，如果当前存在事务，则抛出异常。 |
+|PROPAGATION_NESTED| 6 |如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。|
