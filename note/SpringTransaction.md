@@ -50,3 +50,13 @@
 |ISOLATION_REPEATABLE_READ | 4 |这种事务隔离级别可以防止脏读，不可重复读。但是可能出现幻读。 |
 |ISOLATION_SERIALIZABLE | 8 |这是花费最高代价但是最可靠的事务隔离级别。事务被处理为顺序执行。除了防止脏读，不可重复读外，还避免了幻读。|
 
+## 配置事务管理器
+``` xml
+<!-- 配置事务 -->
+	<bean id="transactionManagerAccount" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="dataSourceAccount" />
+		</property>
+	</bean>
+```
+
