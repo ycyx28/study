@@ -17,14 +17,14 @@
   - 同一级如果某个动作没有子ID就最先执行。
   - 同一级的动作执行时遵循最上最右执行的原则
 > ### 表访问的几种方式
-  - TABLE ACCESS FULL(全表扫描)
-  - TABLE ACCESS BY ROWID（通过ROWID的表存取）：ROWID是Oracle自动加在表最后的一列伪列，表中不会物理存储ROWID。
-  - TABLE ACCESS BY INDEX SCAN（索引扫描）
-    - INDEX UNIQUE SCAN(索引唯一扫描)：每次返回至多返回一条记录
-    - INDEX RANGE SCAN(索引范围扫描)：使用一个索引取多行数据
-    - INDEX FULL SCAN(索引全扫描)：进行全索引扫描时，插叙出的数据都必须从索引中可以直接得到。（CBO，Cost-Based Optimization）基于代价的优化器
-    - INDEX FAST FULL SCAN(索引快速扫描)：扫描索引中的所有数据块，不对查询出来的数据进行排序
-    - INDEX SKIP SCAN(索引跳跃扫描)：表有一个复合索引，且在查询时有除了前导列（索引中第一列）外的其他条件，并且优化器模式为CBO。
+- TABLE ACCESS FULL(全表扫描)。
+- TABLE ACCESS BY ROWID（通过ROWID的表存取）：ROWID是Oracle自动加在表最后的一列伪列，表中不会物理存储ROWID。
+- TABLE ACCESS BY INDEX SCAN（索引扫描）
+  - INDEX UNIQUE SCAN(索引唯一扫描)：每次返回至多返回一条记录
+  - INDEX RANGE SCAN(索引范围扫描)：使用一个索引取多行数据
+  - INDEX FULL SCAN(索引全扫描)：进行全索引扫描时，插叙出的数据都必须从索引中可以直接得到。（CBO，Cost-Based Optimization）基于代价的优化器
+  - INDEX FAST FULL SCAN(索引快速扫描)：扫描索引中的所有数据块，不对查询出来的数据进行排序
+  - INDEX SKIP SCAN(索引跳跃扫描)：表有一个复合索引，且在查询时有除了前导列（索引中第一列）外的其他条件，并且优化器模式为CBO。
 
 > ### Oracle优化器
   - RBO(Rule-Based Optimization) 基于规则的优化器
