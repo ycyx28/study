@@ -105,13 +105,13 @@
 ```
  在对应方法上加上@Transactional注解，并指定异常回滚
 ``` java
-    @Transactional(rollbackFor=BaseRuntimeException.class)
-    public void insertOrder(Order order) throws Exception {
-	    try{
-		dao.save("insertOrder",order);
-	    }catch (Exception e) {
-	    	throw new BaseRuntimeException("insertOrder exception!!!",e);
-	    }	
-    }
+@Transactional(rollbackFor=BaseRuntimeException.class)
+public void insertOrder(Order order) throws Exception {
+    try{
+	dao.save("insertOrder",order);
+    }catch (Exception e) {
+	throw new BaseRuntimeException("insertOrder exception!!!",e);
+    }	
+}
 ```
 
