@@ -78,7 +78,6 @@
 	rollback-for:配置异常回滚方法
 	name：控制事物方法，如果以“insert”开头的方法insertOrder(Order order)，
 	事物传播属性为“REQUIRED”,其他方法事物传播属性为“SUPPORTS”，一般查询的时候用到
-	expression：用aop配置事物控制的包、类和方法，多个用OR隔开
 -->
 <tx:advice id="txAdviceOrder" transaction-manager="transactionManagerOrder">
         <tx:attributes>
@@ -87,11 +86,32 @@
         </tx:attributes>
 </tx:advice>
 
+<!--
+	expression：用aop配置事物控制的包、类和方法，多个用OR 或者 || 分隔
+-->
  <aop:config>
         <aop:pointcut id="servicePointcutOrder" expression="execution (* com.ycyx28.study.orderimpl.*.*(..)) OR
 						execution (* com.ycyx28.study.hisorderimpl.*.*(..))"/>
         <aop:advisor advice-ref="txAdviceOrder" pointcut-ref="servicePointcutOrder"/>
  </aop:config>
 
+```
+
+### 基于注解事物管理(@Transactional)
+
+``` xml
+ <!-- 声明式事务管理 配置事物的注解方式注入-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+```
+ 在对应方法上加上@Transactional注解，并指定异常回滚
+``` java
+    @Transactional(rollbackFor=BaseRuntimeException.class)
+    public void insertOrder(Order order) throws Exception {
+	    try{
+		dao.save("insertOrder",order);
+	    }catch (Exception e) {
+	    	throw new BaseRuntimeException("insertOrder exception!!!",e);
+	    }	
+    }
 ```
 
