@@ -28,8 +28,8 @@ java程序运行时数据会存放在运行时数据区，这个存储区域包�
   - 新生代，`-xmn` ；`-Xms`和`-Xmx`,堆内存大小;旧生带 = (`-Xms`)-(`-Xmn`)。
   
   一般情况下，`-Xms`和`-Xmx`设置大小一样，这样可以避免JVM频繁调整大小。
-  
-常见参数的解释
+  
+- 常见参数的解释
 1. -Xms3g -Xmx3g -Xmn1g -XX:PermSize=64m -XX:MaxPermSize=128m
 
   新生代分配1G，java heap最小3G，最大3G，持久带最小64M，最大128M，旧生带大小是-Xms减去-Xmn
