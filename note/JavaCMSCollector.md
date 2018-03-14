@@ -34,6 +34,13 @@ java程序运行时数据会存放在运行时数据区，这个存储区域包�
   
       `新生代分配1G，java heap最小3G，最大3G，持久带最小64M，最大128M，旧生带大小是-Xms减去-Xmn`
    
+2. -XX:SurvivorRatio=8
+
+      `新生代中Eden和S0的比值是8，对应上面配置，Eden大小是1024*0.8M，S0和S1分别是1024*0.1M`
+      
+3. -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:+CMSClassUnloadingEnabled
+
+      `垃圾回收器使用CMS并发收集器，同时开启对旧生带的压缩，对于持久带区域也进行回收`
 
 - 程序计数器
 
