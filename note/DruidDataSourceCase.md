@@ -14,7 +14,7 @@
 ## 建议
 建议以后用各种工具和第三方组件的时候，要理解清楚每个参数的意思，按照实际需求设置值，遇到问题后要冷静分析，寻找规律，不要盲目猜测，如果有能力，最好能跟到源码里面去找问题。
 
-# DruidDataSource参数介绍
+# DruidDataSource常用参数介绍
 DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池(据说是目前最好的连接池,不知道速度有没有BoneCP快)。
 
 |配置|缺省值|说明|
@@ -36,8 +36,7 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 |testOnReturn|false|归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能|
 |testWhileIdle|false|建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。|
 |timeBetweenEvictionRunsMillis||有两个含义：1) Destroy线程会检测连接的间隔时间2) testWhileIdle的判断依据，详细看testWhileIdle属性的说明|
-|numTestsPerEvictionRun||不再使用，一个DruidDataSource只支持一个EvictionRun|
-|minEvictableIdleTimeMillis|||
+|minEvictableIdleTimeMillis||连接保存时间|
 |connectionInitSqls||物理连接初始化的时候执行的sql|
 |exceptionSorter|	自动识别|当数据库抛出一些不可恢复的异常时，抛弃连接|
 |filters||属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有： 监控统计用的filter:stat日志用的filter:log4j防御sql注入的filter:wall|
