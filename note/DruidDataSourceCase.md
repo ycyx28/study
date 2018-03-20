@@ -23,7 +23,7 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 |jdbcUrl||连接数据库的url，不同数据库不一样。例如： mysql : jdbc:mysql://10.20.153.104:3306/druid2 oracle:jdbc:oracle:thin:@10.20.149.85:1521:ocnauto|
 |username||连接数据库的用户名|
 |password||连接数据库的密码。如果你不希望密码直接写在配置文件中，可以使用ConfigFilter。详细看这里:https://github.com/alibaba/druid/wiki/%E4%BD%BF%E7%94%A8ConfigFilter|
-|driverClassName|根据url自动识别|这一项可配可不配，如果不配置druid会根据url自动识别dbType，然后选择相应的driverClassName(建议配置下)|
+|driverClassName|自动识别|这一项可配可不配，如果不配置druid会根据url自动识别dbType，然后选择相应的driverClassName(建议配置下)|
 |initialSize|0|初始化时建立物理连接的个数。初始化发生在显示调用init方法，或者第一次getConnection时|
 |maxActive|8|最大连接池数量|
 |maxIdle|8|已经不再使用，配置了也没效果|
@@ -39,7 +39,7 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 |numTestsPerEvictionRun||不再使用，一个DruidDataSource只支持一个EvictionRun|
 |minEvictableIdleTimeMillis|||
 |connectionInitSqls||物理连接初始化的时候执行的sql|
-|exceptionSorter|	根据dbType自动识别|当数据库抛出一些不可恢复的异常时，抛弃连接|
+|exceptionSorter|	自动识别|当数据库抛出一些不可恢复的异常时，抛弃连接|
 |filters||属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有： 监控统计用的filter:stat日志用的filter:log4j防御sql注入的filter:wall|
 |proxyFilters||类型是List<com.alibaba.druid.filter.Filter>，如果同时配置了filters和proxyFilters，是组合关系，并非替换关系|
 
