@@ -9,6 +9,7 @@
 - [开源在线 Markdown 编辑器](https://pandao.github.io/editor.md/)
 
 # 传送门
+- [DruidDataSource连接超时case](https://github.com/ycyx28/study/blob/master/note/DruidDataSourceCase.md)
 - [Spring事物管理](https://github.com/ycyx28/study/blob/master/note/SpringTransaction.md)
 - [Java线程池](https://github.com/ycyx28/study/blob/master/note/ThreadPool.md)
 - [Java多线程](https://github.com/ycyx28/study/blob/master/note/JavaThread.md)
