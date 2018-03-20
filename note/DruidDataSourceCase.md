@@ -83,8 +83,7 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 	<property name="testOnBorrow" value="false" />
 	<property name="testOnReturn" value="false" />
 	<property name="poolPreparedStatements" value="true" />
-	<property name="maxPoolPreparedStatementPerConnectionSize" 
-	value="${orderdb.pool.maxPoolPreparedStatement}" />
+	<property name="maxPoolPreparedStatementPerConnectionSize" value="${orderdb.pool.maxPoolPreparedStatement}" />
 	<property name="filters" value="log4j" />
 	<property name="proxyFilters">
 		<list><ref bean="stat-filter" /></list>
