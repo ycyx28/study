@@ -44,8 +44,6 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 
 # 配置示例
 ``` xml
-<bean id="encryptTransaction" class="xxx.xxx.xxx">
-</bean>
 
 <bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
 	<property name="slowSqlMillis" value="1000" />
