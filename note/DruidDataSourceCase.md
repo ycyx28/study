@@ -42,5 +42,53 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 |filters||属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有： 监控统计用的filter:stat日志用的filter:log4j防御sql注入的filter:wall|
 |proxyFilters||类型是List<com.alibaba.druid.filter.Filter>，如果同时配置了filters和proxyFilters，是组合关系，并非替换关系|
 
+# 配置示例
+``` xml
+<bean id="encryptTransaction" class="xxx.xxx.xxx">
+</bean>
 
+<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+	<property name="slowSqlMillis" value="1000" />
+	<property name="logSlowSql" value="true" />
+</bean>
+
+<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+	init-method="init" destroy-method="close">
+	<property name="driverClassName" value="XXX" />
+	<property name="url" value="XXX" />
+	<property name="username" value="XXX" />		
+	<property name="connectProperties">
+		<props>
+			<prop key="password">XXX</prop>
+			<prop key="oracle.net.CONNECT_TIMEOUT">10000</prop>
+			<prop key="oracle.net.READ_TIMEOUT">25000</prop>
+			<prop key="oracle.jdbc.ReadTimeout">25000</prop>
+		</props>
+	</property>
+	<property name="passwordCallback">
+		<bean class="xxx.xxx.xxx" >
+			<property name="encrypt">
+				<ref bean="encryptTransaction" />
+			</property>
+		</bean>
+	</property>
+	<property name="initialSize" value="2" />
+	<property name="minIdle" value="0" />
+	<property name="maxActive" value="4" />
+	<property name="maxWait" value="60000" />
+	<property name="timeBetweenEvictionRunsMillis" value="180000" />
+	<property name="minEvictableIdleTimeMillis" value="600000" />
+	<property name="validationQuery" value="SELECT 'x' from dual" />
+	<property name="testWhileIdle" value="true" />
+	<property name="testOnBorrow" value="false" />
+	<property name="testOnReturn" value="false" />
+	<property name="poolPreparedStatements" value="true" />
+	<property name="maxPoolPreparedStatementPerConnectionSize" 
+	value="${orderdb.pool.maxPoolPreparedStatement}" />
+	<property name="filters" value="log4j" />
+	<property name="proxyFilters">
+		<list><ref bean="stat-filter" /></list>
+	</property>		
+</bean>
+```
 
