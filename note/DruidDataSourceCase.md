@@ -57,26 +57,17 @@ DRUID是阿里巴巴开源平台上一个数据库连接池实现，它结合了
 	<property name="driverClassName" value="XXX" />
 	<property name="url" value="XXX" />
 	<property name="username" value="XXX" />		
-	<property name="connectProperties">
-		<props>
-			<prop key="password">XXX</prop>
-			<prop key="oracle.net.CONNECT_TIMEOUT">10000</prop>
-			<prop key="oracle.net.READ_TIMEOUT">25000</prop>
-			<prop key="oracle.jdbc.ReadTimeout">25000</prop>
-		</props>
-	</property>
-	<property name="passwordCallback">
-		<bean class="xxx.xxx.xxx" >
-			<property name="encrypt">
-				<ref bean="encryptTransaction" />
-			</property>
-		</bean>
-	</property>
+        <property name="password" value="${jdbc.password}" />
 	<property name="initialSize" value="2" />
+	<!--最小等待(空闲)连接中的数量-->
 	<property name="minIdle" value="0" />
 	<property name="maxActive" value="4" />
+	<!--最大等待毫秒数, 单位为 ms, 如果超过此时间将接到异常,设为-1表示无限制-->
 	<property name="maxWait" value="60000" />
+	<!--在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位.
+	    如果设置为非正数,则不运行空闲连接回收器线程-->
 	<property name="timeBetweenEvictionRunsMillis" value="180000" />
+	<!-- 连接池中保持空闲而不被空闲连接回收器线程 ，回收的最小时间值，单位毫秒-->
 	<property name="minEvictableIdleTimeMillis" value="600000" />
 	<property name="validationQuery" value="SELECT 'x' from dual" />
 	<property name="testWhileIdle" value="true" />
