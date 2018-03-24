@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo">
+
+	<dubbo:application name="${dubbo_name}" />
+	<dubbo:registry address="${zookeeper_address}" />
+	<dubbo:protocol name="dubbo"  host="${service_host}" port="${service_port}" threads="20"/>
+	
+    <dubbo:service interface="com.ycyx28.study.api.IHelloWorld" ref="helloDubboService"  timeout="${dubbo_timeout}" retries="${dubbo_retries}"/>
+	
+	<!-- <dubbo:reference id="remitanceBankRPCService" interface="com.ziyun.common.api.services.interfaces.bankconnect.remitance.IRemitanceBankRPCService" filter="defaultClientFilter" init="true" check="false"></dubbo:reference> -->
+	
+</beans>
