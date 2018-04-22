@@ -11,6 +11,7 @@
 - [DruidDataSource连接超时case](https://github.com/ycyx28/study/blob/master/note/DruidDataSourceCase.md)
 
 # 学习笔记
+- [Redis Cluser节点添加](https://github.com/ycyx28/study/blob/master/note/redisClusterAdd.md)
 - [Redis4.0.9 Cluser搭建](https://github.com/ycyx28/study/blob/master/note/redisClusterInstall.md)
 - [Spring事物管理](https://github.com/ycyx28/study/blob/master/note/SpringTransaction.md)
 - [Java线程池](https://github.com/ycyx28/study/blob/master/note/ThreadPool.md)
