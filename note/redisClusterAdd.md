@@ -1,4 +1,4 @@
-# Redis cluster 搭建
+# Redis cluster 节点添加
 
 ## 1.添加master节点
 	- 在集群中新增一个节点7007作为主节点修改配置文件
