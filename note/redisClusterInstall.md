@@ -133,9 +133,32 @@ ps -ef | grep redis
 ```
 --replicas参数指定集群中每个主节点配备几个从节点，这里设置为1
 
+redis cluster启动脚本cluster-create.sh
 ```shell
 #!/bin/bash
 ./redis-4.0.1/src/redis-trib.rb create  --replicas 1 192.168.28.131:7001 192.168.28.131:7002 192.168.28.131:7003 192.168.28.131:7004 192.168.28.131:7005 192.168.28.131:7006
 ```
+使用
+```shell
+chmod 755 cluster-create.sh
+./cluster-create.sh
+```
 
+- 9连接redis cluster
+```shell
+./bin/redis-cli -c -h 192.168.28.132 -p 7001
+```
+-c cluster，表示使用cluster集群方式启动
+
+-h host，机器ip
+
+-p port,redis启动端口
+
+- 10.redis3.0也可以按此方法安装，ruby安装可以简化,下面简单介绍下
+```shell
+yum install ruby
+yum install rubygems
+wget https://rubygems.global.ssl.fastly.net/gems/redis-3.2.2.gem
+ruby install -l redis-3.2.2.gem
+```
 
