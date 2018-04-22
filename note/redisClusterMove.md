@@ -109,7 +109,7 @@ S: 45007a3d04105cbf982e19ae4d50bbcad756f4ef 192.168.28.132:7005
 >>> Check slots coverage...
 [OK] All 16384 slots covered.
 ```
-移除成功，7007节点slots: (0 slots) master
+移除成功，7007节点slots: (0 slots) master；7001slots:0-6826,10923-12287 (8192 slots) master，比原来多了4096个。
 
 下面执行del-node操作，移除节点，节点删除时必须知道删除节点的nodeid，如果7007的节点id：`d9180d91a208653f2b6c116569b58948073503aa`。
 
