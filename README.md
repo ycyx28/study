@@ -5,7 +5,7 @@
 
 - [Super.Yu](http://ycyx28.com/)
 
-# 实际项目中解决的问题
+# 解决的问题
 
 - [关于解决数据导出慢的case](https://github.com/ycyx28/study/blob/master/note/DataexportCase1.md)
 - [DruidDataSource连接超时case](https://github.com/ycyx28/study/blob/master/note/DruidDataSourceCase.md)
