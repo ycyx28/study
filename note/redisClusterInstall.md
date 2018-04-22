@@ -180,9 +180,13 @@ rm -rf slave*/conf/nodes.conf slave*/data/*
 ```
 
 - 12.集群状态查看
+
 M：Master节点
+
 S：Slaver节点
+
 slots：redis各个节点所分配的Hash槽
+
  ```shell
  [root@node2 bin]# ./redis-trib.rb check 192.168.28.132:7001
  >>> Performing Cluster Check (using node 192.168.28.132:7001)
