@@ -213,6 +213,3 @@ S: 5fec085f652ccf15817b45526c5148d8e3505c55 192.168.28.132:7005
 >>> Check slots coverage...
 [OK] All 16384 slots covered.
  ```
-
-- 13.master节点添加
-
