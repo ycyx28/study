@@ -23,7 +23,8 @@
 - [Java运算符](https://github.com/ycyx28/study/blob/master/note/BinaryCalculate.md)
 - [Zookeeper原理](https://github.com/ycyx28/study/blob/master/note/Zookeeper.md)
 
-# MarkDown
+# 关注
+- [Redis 集群规范](http://www.redis.cn/topics/cluster-spec.html)
 - [开源在线 Markdown 编辑器](https://pandao.github.io/editor.md/)
 
 
