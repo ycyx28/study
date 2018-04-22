@@ -179,3 +179,34 @@ rm -rf master*/conf/nodes.conf master*/data/*
 rm -rf slave*/conf/nodes.conf slave*/data/*
 ```
 
+- 12.集群状态查看
+M：Master节点
+S：Slaver节点
+slots：redis各个节点所分配的Hash槽
+ ```shell
+ [root@node2 bin]# ./redis-trib.rb check 192.168.28.132:7001
+ >>> Performing Cluster Check (using node 192.168.28.132:7001)
+M: d1965f9bfc2c77c3fc8acbd4beb4769a1f2ca139 192.168.28.132:7001
+   slots:0-5460 (5461 slots) master
+   1 additional replica(s)
+M: 95216137f8ff3f5bb16d9e564b2ddc9c09adbfbb 192.168.28.132:7002
+   slots:5461-10922 (5462 slots) master
+   1 additional replica(s)
+S: 9235e8405f6e8200a9ddf99e2d06fa0a0fb2dc85 192.168.28.132:7004
+   slots: (0 slots) slave
+   replicates 611992d423571d9db627abe1e3f52e859c744062
+M: 611992d423571d9db627abe1e3f52e859c744062 192.168.28.132:7003
+   slots:10923-16383 (5461 slots) master
+   1 additional replica(s)
+S: 00ebc684ac798a6bff60ffcf5963132a12c84964 192.168.28.132:7006
+   slots: (0 slots) slave
+   replicates 95216137f8ff3f5bb16d9e564b2ddc9c09adbfbb
+S: 5fec085f652ccf15817b45526c5148d8e3505c55 192.168.28.132:7005
+   slots: (0 slots) slave
+   replicates d1965f9bfc2c77c3fc8acbd4beb4769a1f2ca139
+[OK] All nodes agree about slots configuration.
+>>> Check for open slots...
+>>> Check slots coverage...
+[OK] All 16384 slots covered.
+ ```
+
