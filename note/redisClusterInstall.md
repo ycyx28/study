@@ -62,6 +62,13 @@ scl  enable  rh-ruby23 bash　　　　//必要一步
 ruby -v　　　　//查看安装版本
 gem install redis
 ```
+备注：配置ruby,重启机器后ruby可以正常使用，`ruby -v`
+
+在/etc/profile中添加类似如下两句：
+```shell
+source /opt/rh/rh-ruby23/enable
+export X_SCLS="`scl enable rh-ruby23 'echo $X_SCLS'`"
+```
 
 - 6.启动redis
 
