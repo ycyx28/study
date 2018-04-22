@@ -161,6 +161,8 @@ chmod 755 cluster-create.sh
 
 -p port,redis启动端口
 
+
+
 - 10.redis3.0也可以按此方法安装，ruby安装可以简化,下面简单介绍下
 ```shell
 yum install ruby
