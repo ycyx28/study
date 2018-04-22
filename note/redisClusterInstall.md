@@ -173,7 +173,7 @@ ruby install -l redis-3.2.2.gem
 
 当集群启动后，若有redis节点重启或者挂掉，不需要做其他处理，把挂掉的redis节点启动后整个集群即可进入正常工作，如果需要重置集群，需要把集群中的生成的配置文件产出后再从新启动，删除脚本如下：
 ```shell
-rm -rf master*/conf/nodes.conf master*/conf/redis_7001.pid master*/data/*
-rm -rf slave*/conf/nodes.conf slave*/conf/redis_7001.pid slave*/data/*
+rm -rf master*/conf/nodes.conf master*/data/*
+rm -rf slave*/conf/nodes.conf slave*/data/*
 ```
 
