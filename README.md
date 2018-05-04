@@ -24,6 +24,7 @@
 - [Zookeeper原理](https://github.com/ycyx28/study/blob/master/note/Zookeeper.md)
 
 # 关注
+- [缓存击穿](https://www.cnblogs.com/dinglang/p/6133501.html)
 - [Redis 集群规范](http://www.redis.cn/topics/cluster-spec.html)
 - [开源在线 Markdown 编辑器](https://pandao.github.io/editor.md/)
 
