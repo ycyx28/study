@@ -56,7 +56,11 @@ sed -i "s/old_string/new_String/g" /usr/local/path/demo.txt
 
 - `'s|old_String|new_String|g'` 替换，将"old_String"替换成"new_String",`/g`标记会替换每一行中的所有匹配.
 
-- 
+- xargs,用作替换工具，读取输入数据重新格式化后输出,是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具
+
+- perl ，Perl语言
+
+- perl -pi -e 在Perl 命令中加上-e 选项，后跟一行代码，那它就会像运行一个普通的Perl 脚本那样运行该代码
 
 
 
