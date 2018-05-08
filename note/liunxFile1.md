@@ -46,9 +46,9 @@ sed -i "s/old_string/new_String/g" /usr/local/path/demo.txt
 4. `%s`替换开始
 
 
+## 三.find替换
 
-
-
+`find -name 'filename' | xargs perl -pi -e 's|old_String|new_String|g'` 或者 `find -p path -name 'filename' | xargs perl -pi -e 's\old_String\new_String\g'`
 
 
 
