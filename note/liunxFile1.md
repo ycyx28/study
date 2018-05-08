@@ -108,7 +108,35 @@ demo1 demo2
 demo3
 ```
 
+## xargs结合find使用
 
+- 查找删除文件
 
+```shell
+find -name demo.txt | xargs rm -f
 
+find -P /usr/local/test -type f -name "*.txt" | xargs rm -rf
+
+find . -type f -name "*.txt" | xargs rm -rf
+
+find /usr/local/test -type f -name "*.txt" | xargs rm -rf
+
+```
+
+- 统计文件行数
+
+```shell
+[root@localhost test]# find . -type f -name "redis_master.conf" -print0 | xargs -0 wc -l
+ 23 ./testfile/redis_master.conf
+ 23 ./redis_master.conf
+ 46 total
+ 
+ [root@localhost test]# find . -type f -name "redis_master.conf"  | xargs wc -l
+ 23 ./testfile/redis_master.conf
+ 23 ./redis_master.conf
+ 46 total
+
+```
+
+xargs -0将\0作为定界符
 
