@@ -48,7 +48,15 @@ sed -i "s/old_string/new_String/g" /usr/local/path/demo.txt
 
 ## 三.find替换
 
-`find -name 'filename' | xargs perl -pi -e 's|old_String|new_String|g'` 或者 `find -p path -name 'filename' | xargs perl -pi -e 's\old_String\new_String\g'`
+`find -name 'filename' | xargs perl -pi -e 's|old_String|new_String|g'` 或者 `find -P path -name 'filename' | xargs perl -pi -e 's\old_String\new_String\g'`
+
+- `find -name 'filename' `可以在当前文件夹下搜索所有文件名为`filename`的文件路径，如:`find -name demo.txt`
+
+- `find -P path -name filename`该命令可以指定在特定的文件夹内查找特定的文件,如：`find -P /usr/local/test -name demo.txt`,-P,表示path，路径
+
+- `'s|old_String|new_String|g'` 替换，将"old_String"替换成"new_String",`/g`标记会替换每一行中的所有匹配.
+
+- 
 
 
 
