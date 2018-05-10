@@ -39,7 +39,7 @@ drwxr-xr-x. 7 elsearch elsearch 4096 Oct  7  2017 elasticsearch-5.6.3
 
 改变文件或目录的访问权限，该命令有两种用法，一种是包含字母和操作符表达式的文字设定法；另一种是包含数字的数字设定法。
 
-### 语法
+### 语法1-文字设定
 ```shell
 chmod [who] [+ | - | =] [mode] 文件名
 ```
@@ -50,6 +50,55 @@ chmod [who] [+ | - | =] [mode] 文件名
 - g 表示“同组（group）用户”，即与文件属主有相同组ID的所有用户。
 - o 表示“其他（others）用户”。
 - a 表示“所有（all）用户”。它是系统默认值。
+
+操作符号可以是：
+- + 添加某个权限。
+- - 取消某个权限。
+- = 赋予给定权限并取消其他所有权限（如果有的话）。
+
+设置mode所表示的权限可用下述字母的任意组合：
+- r 可读
+- w 可写
+- x 可执行
+- X 只有目标文件对某些用户是可执行的或该目标文件是目录时才追加x属性
+- s 在文件执行时把进程的属主或组ID置为该文件的文件属主。方式“u＋s”设置文件的用户ID位，“g＋s”设置组ID位
+- t 保存程序的文本到交换设备上
+- u 与文件属主拥有一样的权限
+- g 与和文件属主同组的用户拥有一样的权限
+- o 与其他用户拥有一样的权限
+
+### 语法2-数字设定
+```shell
+chmod [mode] 文件名
+```
+
+#### 参数解释
+- 0表示没有权限，1表示可执行权限，2表示可写权限，4表示可读权限，然后将其相加
+- 字属性的格式应为3个从0到7的八进制数，其顺序是（u）（g）（o）
+
+### 常用用法
+```shell
+[root@localhost testfile]# ll
+total 0
+-rw-r--r--. 1 root root 0 May 10 15:52 aaa.txt
+[root@localhost testfile]# chmod -R 777 aaa.txt 
+[root@localhost testfile]# ll
+total 0
+-rwxrwxrwx. 1 root root 0 May 10 15:52 aaa.txt
+
+[root@localhost testfile]# chmod -x aaa.txt 
+[root@localhost testfile]# ll
+total 0
+-rw-rw-rw-. 1 root root 0 May 10 15:52 aaa.txt
+
+[root@localhost testfile]# chmod -R +x aaa.txt 
+[root@localhost testfile]# ll
+total 0
+-rwxrwxrwx. 1 root root 0 May 10 15:52 aaa.txt
+
+```
+
+
 
 
 
