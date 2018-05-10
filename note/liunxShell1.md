@@ -96,6 +96,12 @@ total 0
 total 0
 -rwxrwxrwx. 1 root root 0 May 10 15:52 aaa.txt
 
+[root@localhost testfile]# chmod -R 755 aaa.txt 
+[root@localhost testfile]# ll
+total 0
+-rwxr-xr-x. 1 root root 0 May 10 15:52 aaa.txt
+
+
 ```
 
 
