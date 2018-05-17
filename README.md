@@ -28,6 +28,7 @@
 # 关注
 - [ThreadLocal](http://www.cnblogs.com/dolphin0520/p/3920407.html)
 - [有状态bean和无状态bean](https://blog.csdn.net/bingjing12345/article/details/9794945)
+- [WeakHashMap和HashMap的区别](https://blog.csdn.net/u010412719/article/details/52035723)
 - [缓存击穿](https://www.cnblogs.com/dinglang/p/6133501.html)
 - [Redis 集群规范](http://www.redis.cn/topics/cluster-spec.html)
 - [开源在线 Markdown 编辑器](https://pandao.github.io/editor.md/)
