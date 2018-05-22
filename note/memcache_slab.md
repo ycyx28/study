@@ -12,7 +12,6 @@
 - -P是设置保存Memcache的pid文件，这里是保存在 /tmp/memcached.pid
 - f 块大小增长因子，默认是1.25
 - -n 最小分配空间，key+value+flags默认是48
--
 
 memcached一开始并不会一下子申请500MB的内存, 而是在需要的时候才会使用malloc申请内存,当申请内存达到500MB时就不会再申请
 
