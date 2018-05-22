@@ -24,6 +24,7 @@ memcached一开始并不会一下子申请500MB的内存, 而是在需要的时�
 在启动memcached的时候一般会使用参数-m指定其可用内存，但是并不是在启动的那一刻所有的内存就全部分配出去了，只有在需要的时候才会去申请，而且每次申请一定是一个slab。Slab的大小固定为1M（1048576 Byte），一个slab由若干个大小相等的chunk组成。每个chunk中都保存了一个item结构体、一对key和value。 
 虽然在同一个slab中chunk的大小相等的，但是在不同的slab中chunk的大小并不一定相等，在memcached中按照chunk的大小不同，可以把slab分为很多种类（class）。在启动memcached的时候可以通过-vv来查看slab的种类。
 
+
 ```shell
 [root@localhost memcached-1.4.5]# /usr/local/bin/memcached -d -m 10 -u root -l 192.168.49.132 -p 12005 -c 256 -P /tmp/memcached10.pid -vv
 slab class   1: chunk size        96 perslab   10922
@@ -75,6 +76,11 @@ slab class  42: chunk size   1048576 perslab       1
 <27 server listening (udp)
 <27 server listening (udp)
 ```
+memcached把slab分为42类（class1～class42），在class 1中，chunk的大小为96字节，由于一个slab的大小是固定的1048576字节（1M），因此在class1中最多可以有perslab = 10922个chunk：
+```other
+10922×80 + 64 = 1048576
+```
+在class1中，剩余的64字节因为不够一个chunk的大小（96byte），因此会被浪费掉
 
 ## chunk
 - Chunk是存放缓存数据的单位。
