@@ -13,6 +13,7 @@
 # 学习笔记
 - [Liunx常用命令1](https://github.com/ycyx28/study/blob/master/note/liunxShell1.md)
 - [Liunx文件字符串替换](https://github.com/ycyx28/study/blob/master/note/liunxFile1.md)
+- [Redis持久化策略](https://github.com/ycyx28/study/blob/master/note/redis_persistence.md)
 - [Redis Cluster节点移除](https://github.com/ycyx28/study/blob/master/note/redisClusterMove.md)
 - [Redis Cluser节点添加](https://github.com/ycyx28/study/blob/master/note/redisClusterAdd.md)
 - [Redis4.0.9 Cluser搭建](https://github.com/ycyx28/study/blob/master/note/redisClusterInstall.md)
