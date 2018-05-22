@@ -28,7 +28,7 @@
 - [Zookeeper原理](https://github.com/ycyx28/study/blob/master/note/Zookeeper.md)
 
 # 关注
-- [彻底弄清楚memcached]（https://blog.csdn.net/think2me/article/details/52091740）
+- [彻底弄清楚memcached](https://blog.csdn.net/think2me/article/details/52091740)
 - [ThreadLocal](http://www.cnblogs.com/dolphin0520/p/3920407.html)
 - [有状态bean和无状态bean](https://blog.csdn.net/bingjing12345/article/details/9794945)
 - [WeakHashMap和HashMap的区别](https://blog.csdn.net/u010412719/article/details/52035723)
