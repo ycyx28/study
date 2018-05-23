@@ -311,7 +311,7 @@ CountDownLatch可以把它看做一个倒数计数器，在引入包的时候发
 
 - CountDownLatchThreadDemo.java
 ``` java
-package com.dinpay.demo.xml.thread;
+package com.ycyx28.thread;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -351,7 +351,7 @@ public class CountDownLatchThreadDemo implements Runnable {
 - CountDownLatchThreadMain.java
 
 ``` java
-package com.dinpay.demo.xml.thread;
+package com.ycyx28.thread;
 
 import java.util.concurrent.CountDownLatch;
 
