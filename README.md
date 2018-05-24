@@ -29,6 +29,7 @@
 - [Zookeeper原理](https://github.com/ycyx28/study/blob/master/note/Zookeeper.md)
 
 # 关注
+- [数据库死锁的检查和解决方法](https://www.cnblogs.com/huanyou/p/5775965.html)
 - [Spring源码阅读](https://github.com/seaswalker/Spring)
 - [Zookeeper分布式环境中的假死脑裂](https://blog.csdn.net/u010185262/article/details/49910301)
 - [Java NIO](http://ifeve.com/java-nio-all)
