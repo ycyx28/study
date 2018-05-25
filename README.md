@@ -11,6 +11,7 @@
 - [DruidDataSource连接超时case](https://github.com/ycyx28/study/blob/master/note/DruidDataSourceCase.md)
 
 # 学习笔记
+- [限流](https://github.com/ycyx28/study/blob/master/note/currentLimiting.md)
 - [Memcache内存分配](https://github.com/ycyx28/study/blob/master/note/memcache_slab.md)
 - [Redis持久化策略](https://github.com/ycyx28/study/blob/master/note/redis_persistence.md)
 - [Redis Cluster节点移除](https://github.com/ycyx28/study/blob/master/note/redisClusterMove.md)
