@@ -1,7 +1,6 @@
 # dubbo日志追踪
 在使用dubbo时，相信大家都遇到了很头疼的问题，就是服务提供者和服务消费者日志无法对应，如果有搭建自己的日志系统，在没有其他关键字的情况下，很难把服务消费者和服务提供者的日志对应起来，对线上排查问题造成了很大的阻碍，下面我分别从几个方面介绍下如何在dubbo服务端和消费者追踪日志，如果有不对或不足的地方，欢迎留言或者联系我。
 
-- [Log4自定义Appender](https://www.cnblogs.com/grh946/p/5977046.html)
 
 ## AppenderSkeleton
 AppenderSkeleton可以实现自定义log4j Appender ，只需要继承AppenderSkeleton重写期方法即可，下面介绍下AppenderSkeleton的基本方法，一般情况下只需要重写append方法即可
@@ -10,6 +9,8 @@ AppenderSkeleton可以实现自定义log4j Appender ，只需要继承AppenderSk
 - 初始化加载资源：public void activateOptions()，默认实现为空
 - 释放资源：public void close() 
 - 是否需要按格式输出文本：public boolean requiresLayout() 
+
+- [Log4自定义Appender](https://www.cnblogs.com/grh946/p/5977046.html)
 
 # MDC
 MDC是为每个线程建立一个独立的存储空间，用threadlocal来保存每个线程的Hashtable的key/value信息。
