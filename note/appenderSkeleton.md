@@ -2,7 +2,7 @@
 在使用dubbo时，相信大家都遇到了很头疼的问题，就是服务提供者和服务消费者日志无法对应，如果有搭建自己的日志系统，在没有其他关键字的情况下，很难把服务消费者和服务提供者的日志对应起来，对线上排查问题造成了很大的阻碍，下面我分别从几个方面介绍下如何在dubbo服务端和消费者追踪日志，如果有不对或不足的地方，欢迎留言或者联系我。
 
 
-## AppenderSkeleton
+## 1 AppenderSkeleton
 AppenderSkeleton可以实现自定义log4j Appender ，只需要继承AppenderSkeleton重写期方法即可，下面介绍下AppenderSkeleton的基本方法，一般情况下只需要重写append方法即可
 
 - 打印日志核心方法：abstract protected void append(LoggingEvent event); 
@@ -12,7 +12,7 @@ AppenderSkeleton可以实现自定义log4j Appender ，只需要继承AppenderSk
 
 - [Log4自定义Appender](https://www.cnblogs.com/grh946/p/5977046.html)
 
-# MDC
+# 2 MDC
 MDC是为每个线程建立一个独立的存储空间，用threadlocal来保存每个线程的Hashtable的key/value信息。
 
 MDC的put源码如下
@@ -84,10 +84,10 @@ public void set(T value) {
 
 由以上源码可知，MDC实际是依靠ThreadLocal实现，每个线下都有自己独立的值，线程安全。
 
-## Dubbo隐式参数
+## 3 Dubbo隐式参数
 可以通过`RpcContext`上的`setAttachment`和`getAttachment`在服务消费方和提供之间进行参数的隐式传递
 
-### 在服务消费方端设置隐式参数
+### 3.1 在服务消费方端设置隐式参数
 
 setAttachment 设置的 KV 对，在完成下面一次远程调⽤会被清空，即多次远程调用要多次设置。
 
@@ -98,7 +98,7 @@ xxxService.xxx(); // 远程调用
 //TODO 具体业务
 ```
 
-### 在服务提供方端获取隐式参数
+### 3.2 在服务提供方端获取隐式参数
 getAttachment 用过key获取setAttachment设置的value。
 
 ``` java
@@ -108,7 +108,7 @@ String index = RpcContext.getContext().getAttachment("index");
 
 - 注意：path, group, version, dubbo, token, timeout 几个 key 是保留字段，请使用其它值
 
-## Dubbo Filter
+## 4 Dubbo Filter
 服务提供方和服务消费方调用过程拦截，Dubbo 本身的大多功能均基于此扩展点实现，每次远程方法执行，该拦截都会被执行，需要注意对性能会有影响。
 
 dubbo约定：
