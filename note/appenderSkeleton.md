@@ -12,7 +12,7 @@ AppenderSkeleton可以实现自定义log4j Appender ，只需要继承AppenderSk
 
 - LoggingEvent关键方法减少
 ``` java
-//这是属性，保存K/v
+//设置属性，保存K/v
 event.setProperty(key, value);
 //根据key获取设置属性
 event.getProperty(key);
