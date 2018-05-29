@@ -10,6 +10,17 @@ AppenderSkeleton可以实现自定义log4j Appender ，只需要继承AppenderSk
 - 释放资源：public void close() 
 - 是否需要按格式输出文本：public boolean requiresLayout() 
 
+- LoggingEvent关键方法减少
+``` java
+//这是属性，保存K/v
+event.setProperty(key, value);
+//根据key获取设置属性
+event.getProperty(key);
+//根据key获取MDC值，ThreadLocal，线程安全
+event.getMDC(key);
+
+```
+
 - [Log4自定义Appender](https://www.cnblogs.com/grh946/p/5977046.html)
 
 # 2 MDC
