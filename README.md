@@ -11,7 +11,6 @@
 - [DruidDataSource连接超时case](https://github.com/ycyx28/study/blob/master/note/DruidDataSourceCase.md)
 
 # 学习笔记
-- [Dubbo日志追踪](https://github.com/ycyx28/study/blob/master/note/appenderSkeleton.md)
 - [限流](https://github.com/ycyx28/study/blob/master/note/currentLimiting.md)
 - [Memcache内存分配](https://github.com/ycyx28/study/blob/master/note/memcache_slab.md)
 - [Redis持久化策略](https://github.com/ycyx28/study/blob/master/note/redis_persistence.md)
@@ -28,6 +27,7 @@
 - [Liunx常用命令1](https://github.com/ycyx28/study/blob/master/note/liunxShell1.md)
 - [Liunx文件字符串替换](https://github.com/ycyx28/study/blob/master/note/liunxFile1.md)
 - [Oracle执行计划](https://github.com/ycyx28/study/blob/master/note/OraclePlan.md)
+- [Dubbo日志追踪](https://github.com/ycyx28/study/blob/master/note/appenderSkeleton.md)
 - [Zookeeper原理](https://github.com/ycyx28/study/blob/master/note/Zookeeper.md)
 
 # 关注
