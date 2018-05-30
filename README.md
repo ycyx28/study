@@ -19,6 +19,7 @@
 - [Redis4.0.9 Cluser搭建](https://github.com/ycyx28/study/blob/master/note/redisClusterInstall.md)
 - [Spring事物管理](https://github.com/ycyx28/study/blob/master/note/SpringTransaction.md)
 - [HashMap](https://github.com/ycyx28/study/blob/master/note/HashMap.md)
+- [Java自定义异常](https://github.com/ycyx28/study/blob/master/note/customException.md)
 - [Java主线程等待子线程、线程池](https://github.com/ycyx28/study/blob/master/note/MainThreadWaitThread.md)
 - [Java线程池](https://github.com/ycyx28/study/blob/master/note/ThreadPool.md)
 - [Java多线程](https://github.com/ycyx28/study/blob/master/note/JavaThread.md)
