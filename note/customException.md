@@ -73,4 +73,4 @@ public XxxResponse xxxMethod(){
    throw new XxxException("触发Xxx异常");
 }
 ```
-AOP处理这里就不做详细解释了。
+AOP处理这里就不做详细说明了。
