@@ -1,7 +1,7 @@
 # elasticsearch-5.6.3集群安装
 
 elasticsearch.yml
-``` xml
+``` other
 
 # ---------------------------------- Cluster -----------------------------------
 #
@@ -62,7 +62,7 @@ http.cors.allow-origin: "*"
 ## Kibana-5.6.3
 
 kibana.yml
-``` xml
+``` other
 # Kibana is served by a back end server. This setting specifies the port to use.
 server.port: 5601
 
